@@ -1,6 +1,5 @@
 package pe.com.autoxtreme.controller;
 
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,14 +8,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pe.com.autoxtreme.model.Empleado;
-import pe.com.autoxtreme.repository.EmpleadoRepository;
+import pe.com.autoxtreme.repository.IEmpleadoRepository;
 
 @Controller
 @RequestMapping(path = "/login")
 public class LoginController {
 
 	@Autowired
-	private EmpleadoRepository emRep;
+	private IEmpleadoRepository emRep;
 
 	// crear un controlador para cargar la pagina index
 	@GetMapping("/cargar")
@@ -36,7 +35,7 @@ public class LoginController {
 			return "index";
 		} else {
 			model.addAttribute("empleado", e);
-			return "MenuPrincipal";
+			return "menu-principal";
 		}
 	}
 
