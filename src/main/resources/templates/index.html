@@ -9,34 +9,35 @@
 	crossorigin="anonymous">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body style="margin-top: 75px; margin-left: 100px; background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%) ;opacity: 100%;">
+<body
+	style="margin-top: 75px; margin-left: 100px; background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%); opacity: 100%;">
 	<div class="container mt-4 col-lg-4">
 		<div style="border: 3px solid black;" class="card col-sm-10">
 			<div style="font-family: Courier New, monospace;" class="card-body ">
-				<form th:action="@{/login/validar}" class="form-sign" method="post" th:object="${empleado}">
+				<form th:action="@{/login/validar}" class="form-sign" method="post"
+					th:object="${empleado}">
 					<div class="form-group text-center">
 						<h3 style="font-size: 30px">Login</h3>
-						<img style="margin-top: 0%;" src="imgs/logo.png" alt="" width="200"> 
-						<label style="font-size: 20px; margin-top: 0px;">Bienvenidos al sistema AutoXtreme</label>
+						<img style="margin-top: 0%;" src="imgs/logo.png" alt=""
+							width="200"> <label
+							style="font-size: 20px; margin-top: 0px;">Bienvenidos al sistema AutoXtreme</label>
 					</div>
 					<div class="form-group">
-						<label for="">Usuario</label>
-						<input type="text" th:field="*{user}" class="form-control">
+						<label for="">Usuario</label> <input type="text" th:field="*{user}" class="form-control">
 					</div>
 					<div class="form-group">
-						<label for="">Password</label>
-						<input type="password" th:field="*{clave}" class="form-control">
+						<label for="">Password</label> <input type="password" th:field="*{clave}" class="form-control">
 					</div>
 					<input type="submit" value="ingresar"
 						class="btn btn-primary btn-block">
 				</form>
 				<br>
-				<div class="alert alert-danger" role="alert" th:if="${mensaje}" th:text="${mensaje}" ></div>
+				<div class="alert alert-danger" role="alert" th:if="${mensaje}"
+					th:text="${mensaje}"></div>
 			</div>
 
 		</div>
 	</div>
-
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

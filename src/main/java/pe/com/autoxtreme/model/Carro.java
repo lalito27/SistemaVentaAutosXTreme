@@ -2,7 +2,11 @@ package pe.com.autoxtreme.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -12,10 +16,11 @@ import lombok.Data;
 @Data
 public class Carro {
     @Id
-    @Column(name = "IdCarro")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column (name = "IdCarro", nullable = false)
     private int id;
 
-    @Column(name = "Descripcion")
+    @Column (name = "Descripcion", length = 45)
     private String descripcion;
 
     @Column(name = "IdMarca")
@@ -32,4 +37,11 @@ public class Carro {
 
     @Column(name = "Stock")
     private int stock;
+    
+	@ManyToOne
+	@JoinColumn(name = "IdMarca", insertable = false, updatable = false)
+	Marca objMarca;
+	
 }
+
+

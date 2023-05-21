@@ -25,7 +25,7 @@ public class LoginController {
 	}
 
 	@PostMapping("/validar")
-	public String grabarPag(@ModelAttribute Empleado empleado, Model model) {
+	public String grabarPag(@ModelAttribute Empleado empleado, Model model ){
 		System.out.println(empleado);
 		Empleado e = emRep.findByUserAndClave(empleado.getUser(), empleado.getClave());
 		System.out.println(e);
